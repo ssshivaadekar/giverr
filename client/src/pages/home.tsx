@@ -201,10 +201,8 @@ export default function Home() {
                 <div className="text-sm text-gray-500">This Week</div>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                  <Heart className="w-4 h-4 mr-1" />
-                  <span>{currentUser?.kindnessLevel || "High Trust"}</span>
-                </div>
+                <div className="text-2xl font-bold text-gray-900">{currentUser?.kindnessLevel || 1}</div>
+                <div className="text-sm text-gray-500">Kindness Level</div>
               </div>
             </div>
           </div>
