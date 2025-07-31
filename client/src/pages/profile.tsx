@@ -114,13 +114,7 @@ export default function Profile() {
                   <span>Joined {new Date(currentUser.createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
                 </div>
 
-                {/* Kindness Level Badge */}
-                <div className="mt-4">
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-800">
-                    <Award className="w-5 h-5 mr-2" />
-                    <span className="font-semibold">Kindness Level {currentUser.kindnessLevel || 1}</span>
-                  </div>
-                </div>
+
               </div>
             </div>
 
@@ -149,8 +143,8 @@ export default function Profile() {
               
               <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
                 <div className="text-3xl font-bold text-purple-600">{currentUser.kindnessLevel || 1}</div>
-                <div className="text-sm text-purple-800 font-medium">Kindness Level</div>
-                <div className="text-xs text-gray-600 mt-1">Community impact</div>
+                <div className="text-sm text-purple-800 font-medium">Community Score</div>
+                <div className="text-xs text-gray-600 mt-1">Impact rating</div>
               </div>
             </div>
           </div>
