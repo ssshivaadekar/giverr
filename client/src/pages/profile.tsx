@@ -126,7 +126,7 @@ export default function Profile() {
               <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
                 <div className="text-3xl font-bold text-purple-600">{currentUser.kindnessLevel || 1}</div>
                 <div className="text-sm text-purple-800 font-medium">Kindness Level</div>
-                <div className="text-xs text-gray-600 mt-1">Trust & reputation</div>
+                <div className="text-xs text-gray-600 mt-1">Community impact</div>
               </div>
             </div>
           </div>
