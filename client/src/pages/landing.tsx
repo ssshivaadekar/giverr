@@ -20,7 +20,7 @@ export default function Landing() {
       <Navigation onShowAuth={handleShowAuth} />
 
       {/* Hero Section */}
-      <header className="bg-white pt-24 pb-16 overflow-hidden">
+      <header className="bg-white pt-28 pb-16 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           {/* Background gradient circles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -29,11 +29,11 @@ export default function Landing() {
           </div>
           
           <div className="relative z-10">
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-12">
               <img 
                 src="https://img1.wsimg.com/isteam/ip/e39f59ba-0d63-455a-9c4c-edc64d9436f5/Giverr_logo.jpg" 
                 alt="GIVERR" 
-                className="h-16 w-auto"
+                className="h-24 md:h-32 w-auto shadow-lg rounded-lg"
               />
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">

@@ -6,13 +6,13 @@ export default function Navigation({ onShowAuth }: NavigationProps) {
   return (
     <nav className="glass-effect shadow-sm fixed w-full z-50 top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <img 
                 src="https://img1.wsimg.com/isteam/ip/e39f59ba-0d63-455a-9c4c-edc64d9436f5/Giverr_logo.jpg" 
                 alt="GIVERR" 
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </div>
           </div>

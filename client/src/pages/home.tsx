@@ -149,12 +149,12 @@ export default function Home() {
       {/* Navigation */}
       <nav className="bg-white shadow-sm fixed w-full z-50 top-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
               <img 
                 src="https://img1.wsimg.com/isteam/ip/e39f59ba-0d63-455a-9c4c-edc64d9436f5/Giverr_logo.jpg" 
                 alt="GIVERR" 
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
             </div>
             <div className="flex items-center space-x-4">
@@ -183,7 +183,7 @@ export default function Home() {
       </nav>
 
       {/* Main Content */}
-      <div className="pt-16 pb-20 md:pb-8">
+      <div className="pt-20 pb-20 md:pb-8">
         {/* User Stats Header */}
         <div className="bg-white border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
