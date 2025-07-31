@@ -137,7 +137,7 @@ export default function Home() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading...</p>
         </div>
       </div>
@@ -157,7 +157,7 @@ export default function Home() {
               <button className="relative p-2 text-gray-400 hover:text-gray-600">
                 <Heart className="w-5 h-5" />
                 {pendingGratitude.length > 0 && (
-                  <span className="absolute top-0 right-0 w-2 h-2 bg-teal-500 rounded-full"></span>
+                  <span className="absolute top-0 right-0 w-2 h-2 bg-pink-500 rounded-full"></span>
                 )}
               </button>
               <button onClick={handleShowProfile} className="flex items-center space-x-2">
@@ -197,9 +197,9 @@ export default function Home() {
                 <div className="text-sm text-gray-500">This Week</div>
               </div>
               <div className="text-center">
-                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium kindness-badge text-white border-0">
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
                   <Heart className="w-4 h-4 mr-1" />
-                  <span>{currentUser?.kindnessLevel || "Rising Star"}</span>
+                  <span>{currentUser?.kindnessLevel || "High Trust"}</span>
                 </div>
               </div>
             </div>
@@ -211,12 +211,12 @@ export default function Home() {
           <div className="space-y-6">
             {/* Welcome Message for New Users */}
             {stories.length === 0 && !storiesLoading && (
-              <div className="warm-card p-6 text-center">
+              <div className="bg-gradient-to-r from-indigo-50 to-pink-50 border border-indigo-200 rounded-xl p-6 text-center">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Welcome to Your Gratitude Journey! 🎉</h3>
                 <p className="text-gray-600 mb-4">Start by expressing gratitude for someone who made a difference in your life. Every story matters!</p>
                 <button 
                   onClick={() => setShowExpressModal(true)}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white warm-gradient-bg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white gradient-bg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <Plus className="w-4 h-4 mr-2" />
                   Express Your First Gratitude
@@ -226,7 +226,7 @@ export default function Home() {
 
             {/* Pending Confirmations */}
             {pendingGratitude.length > 0 && (
-              <div className="warm-card border-l-4 border-l-teal-500 p-6">
+              <div className="bg-white border border-indigo-200 border-l-4 border-l-indigo-500 rounded-lg shadow-sm p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   Pending Confirmations ({pendingGratitude.length})
                 </h3>
@@ -243,7 +243,7 @@ export default function Home() {
                           setPendingStory(story);
                           setShowConfirmModal(true);
                         }}
-                        className="ml-3 text-sm font-medium text-teal-600 hover:text-teal-800"
+                        className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-800"
                       >
                         Review
                       </button>
@@ -256,7 +256,7 @@ export default function Home() {
             {/* Gratitude Stories */}
             {storiesLoading ? (
               <div className="text-center py-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600 mx-auto"></div>
                 <p className="mt-2 text-gray-600">Loading stories...</p>
               </div>
             ) : (
@@ -271,7 +271,7 @@ export default function Home() {
       {/* Floating Action Button */}
       <button
         onClick={() => setShowExpressModal(true)}
-        className="floating-btn warm-gradient-bg text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all"
+        className="floating-btn gradient-bg text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all"
       >
         <Plus className="w-6 h-6" />
       </button>

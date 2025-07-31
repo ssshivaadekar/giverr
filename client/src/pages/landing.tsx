@@ -36,10 +36,10 @@ export default function Landing() {
               Imagine a social network where connection is fueled by gratitude, communities are strengthened by giving back, and purpose is found in helping others. Welcome to GIVERR.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <button onClick={() => handleShowAuth('signup')} className="warm-gradient-bg text-white hover:opacity-90 px-8 py-3 rounded-full text-lg font-semibold shadow-lg transition-all transform hover:scale-105">
+              <button onClick={() => handleShowAuth('signup')} className="gradient-bg text-white hover:opacity-90 px-8 py-3 rounded-full text-lg font-semibold shadow-lg transition-all transform hover:scale-105">
                 Let's get started
               </button>
-              <button onClick={() => scrollToSection('demo')} className="border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition-all">
+              <button onClick={() => scrollToSection('demo')} className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition-all">
                 See Demo
               </button>
             </div>
@@ -188,7 +188,7 @@ export default function Landing() {
 
                 {/* Floating Action Button */}
                 <div className="absolute bottom-4 right-4">
-                  <button className="warm-gradient-bg w-12 h-12 rounded-full shadow-lg flex items-center justify-center">
+                  <button className="gradient-bg w-12 h-12 rounded-full shadow-lg flex items-center justify-center">
                     <i className="fas fa-plus text-white"></i>
                   </button>
                 </div>

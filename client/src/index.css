@@ -15,7 +15,7 @@
   --card-foreground: hsl(222, 84%, 4.9%);
   --border: hsl(214.3, 31.8%, 91.4%);
   --input: hsl(214.3, 31.8%, 91.4%);
-  --primary: hsl(174, 62%, 47%);
+  --primary: hsl(238, 72%, 63%);
   --primary-foreground: hsl(210, 40%, 98%);
   --secondary: hsl(210, 40%, 96%);
   --secondary-foreground: hsl(222.2, 84%, 4.9%);
@@ -23,18 +23,14 @@
   --accent-foreground: hsl(222.2, 84%, 4.9%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(174, 62%, 47%);
+  --ring: hsl(238, 72%, 63%);
   --radius: 0.5rem;
   
-  /* GIVERR Brand Colors - Warm Teal Theme */
-  --brand-teal: hsl(174, 62%, 47%);
-  --brand-teal-light: hsl(174, 62%, 60%);
-  --brand-teal-dark: hsl(174, 62%, 35%);
-  --brand-warm-orange: hsl(33, 100%, 52%);
-  --brand-coral: hsl(14, 91%, 66%);
-  --brand-soft-pink: hsl(330, 60%, 85%);
-  --brand-gradient: linear-gradient(45deg, hsl(174, 62%, 47%), hsl(33, 100%, 52%));
-  --brand-warm-gradient: linear-gradient(135deg, hsl(174, 62%, 47%), hsl(14, 91%, 66%));
+  /* GIVERR Brand Colors */
+  --brand-indigo: hsl(238, 72%, 63%);
+  --brand-indigo-dark: hsl(238, 85%, 59%);
+  --brand-pink: hsl(330, 81%, 60%);
+  --brand-gradient: linear-gradient(45deg, hsl(238, 72%, 63%), hsl(330, 81%, 60%));
 }
 
 .dark {
@@ -76,7 +72,7 @@
 
 @layer components {
   .gradient-text {
-    background: linear-gradient(45deg, hsl(174, 62%, 47%), hsl(33, 100%, 52%));
+    background: linear-gradient(45deg, hsl(238, 72%, 63%), hsl(330, 81%, 60%));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -84,40 +80,29 @@
   }
 
   .gradient-bg {
-    background: linear-gradient(45deg, hsl(174, 62%, 47%), hsl(33, 100%, 52%));
-  }
-
-  .warm-gradient-bg {
-    background: linear-gradient(135deg, hsl(174, 62%, 47%), hsl(14, 91%, 66%));
+    background: linear-gradient(45deg, hsl(238, 72%, 63%), hsl(330, 81%, 60%));
   }
 
   .glass-effect {
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(174, 234, 226, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   .story-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(174, 234, 226, 0.1);
   }
 
   .story-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(45, 212, 191, 0.15);
-    border-color: rgba(45, 212, 191, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
   .rep-badge {
-    background: linear-gradient(135deg, hsl(174, 62%, 47%), hsl(174, 62%, 35%));
+    background: linear-gradient(135deg, hsl(238, 72%, 63%), hsl(249, 75%, 60%));
   }
 
   .star-badge {
-    background: linear-gradient(135deg, hsl(33, 100%, 52%), hsl(14, 91%, 66%));
-  }
-
-  .kindness-badge {
-    background: linear-gradient(135deg, hsl(174, 62%, 60%), hsl(330, 60%, 85%));
+    background: linear-gradient(135deg, hsl(330, 81%, 60%), hsl(43, 96%, 56%));
   }
 
   .floating-btn {
@@ -125,29 +110,11 @@
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    box-shadow: 0 8px 25px rgba(45, 212, 191, 0.3);
-  }
-
-  .floating-btn:hover {
-    box-shadow: 0 12px 35px rgba(45, 212, 191, 0.4);
-    transform: translateY(-2px);
   }
 
   @media (max-width: 768px) {
     .floating-btn {
       bottom: 80px;
     }
-  }
-
-  .warm-card {
-    background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
-    border: 1px solid rgba(45, 212, 191, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(45, 212, 191, 0.08);
-  }
-
-  .warm-card:hover {
-    box-shadow: 0 8px 30px rgba(45, 212, 191, 0.15);
-    border-color: rgba(45, 212, 191, 0.2);
   }
 }
