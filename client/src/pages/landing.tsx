@@ -29,6 +29,13 @@ export default function Landing() {
           </div>
           
           <div className="relative z-10">
+            <div className="flex justify-center mb-8">
+              <img 
+                src="https://img1.wsimg.com/isteam/ip/e39f59ba-0d63-455a-9c4c-edc64d9436f5/Giverr_logo.jpg" 
+                alt="GIVERR" 
+                className="h-16 w-auto"
+              />
+            </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
               In a <span className="gradient-text">Me-First</span> World, <br className="hidden md:block" /> Be a <span className="gradient-text">GIVERR</span>.
             </h1>

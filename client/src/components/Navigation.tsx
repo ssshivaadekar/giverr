@@ -9,8 +9,11 @@ export default function Navigation({ onShowAuth }: NavigationProps) {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full mr-3"></div>
-              <h1 className="text-2xl font-bold gradient-text">GIVERR</h1>
+              <img 
+                src="https://img1.wsimg.com/isteam/ip/e39f59ba-0d63-455a-9c4c-edc64d9436f5/Giverr_logo.jpg" 
+                alt="GIVERR" 
+                className="h-8 w-auto"
+              />
             </div>
           </div>
           <div className="hidden md:block">
