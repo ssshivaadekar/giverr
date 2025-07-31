@@ -118,7 +118,7 @@ export default function Profile() {
                 <div className="mt-4">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-indigo-100 to-pink-100 text-indigo-800">
                     <Award className="w-5 h-5 mr-2" />
-                    <span className="font-semibold">Level {currentUser.kindnessLevel || 1} Giver</span>
+                    <span className="font-semibold">Kindness Level {currentUser.kindnessLevel || 1}</span>
                   </div>
                 </div>
               </div>
