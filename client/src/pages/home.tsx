@@ -9,11 +9,13 @@ import ExpressGratitudeModal from "../components/ExpressGratitudeModal";
 import ConfirmGratitudeModal from "../components/ConfirmGratitudeModal";
 import type { GratitudeStoryWithUsers, User } from "@shared/schema";
 import { Plus, Heart } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Home() {
   const { user, isLoading: authLoading } = useAuth();
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const [, setLocation] = useLocation();
   const [showExpressModal, setShowExpressModal] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [pendingStory, setPendingStory] = useState<GratitudeStoryWithUsers | null>(null);
@@ -127,10 +129,7 @@ export default function Home() {
   };
 
   const handleShowProfile = () => {
-    toast({
-      title: "Coming Soon",
-      description: "User profile feature is coming soon!",
-    });
+    setLocation('/profile');
   };
 
   if (authLoading || !user) {
