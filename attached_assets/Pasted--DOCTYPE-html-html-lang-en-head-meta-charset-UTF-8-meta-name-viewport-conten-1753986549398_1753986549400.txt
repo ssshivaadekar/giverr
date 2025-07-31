@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIVERR - A Social Network for Gratitude</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Replaced Inter with Poppins and Nunito Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Set body font to Nunito Sans for a clean, welcoming feel */
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        /* Set heading fonts to Poppins for a modern, friendly look */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-text {
+            background: -webkit-linear-gradient(45deg, #4F46E5, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full z-20 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <!-- Heading font 'Poppins' will be applied here -->
+                        <h1 class="text-2xl font-bold gradient-text">GIVERR</h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <!-- Body font 'Nunito Sans' will be applied here -->
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#problem" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">The Problem</a>
+                        <a href="#how-it-works" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">How It Works</a>
+                        <a href="#features" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="#ecosystem-value" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Value & Sustainability</a>
+                    </div>
+                </div>
+                <div>
+                     <a href="#" class="bg-indigo-600 text-white hover:bg-indigo-700 px-4 py-2 rounded-full text-sm font-semibold shadow-md transition-transform transform hover:scale-105">Join the Movement</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-white pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                In a <span class="gradient-text">Me-First</span> World, <br class="hidden md:block"> Be a <span class="gradient-text">GIVERR</span>.
+            </h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
+                Imagine a social network where connection is fueled by gratitude, communities are strengthened by giving back, and purpose is found in helping others. Welcome to GIVERR.
+            </p>
+            <div class="mt-8 flex justify-center">
+                <a href="#" class="bg-indigo-600 text-white hover:bg-indigo-700 px-8 py-3 rounded-full text-lg font-semibold shadow-lg transition-transform transform hover:scale-105">Let’s get started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">The Problem We're Solving</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Social Media That Lacks Social Good
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Current platforms are a stream of individual achievements and material possessions. GIVERR is different. We're a community built on the intrinsic value of giving, connecting people through acts of kindness, volunteering, and gratitude.
+                </p>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-2xl font-bold text-gray-700">Over <span class="text-pink-500">100 million</span> posts on Instagram are tagged with #gratitude.</p>
+                <p class="mt-2 text-lg text-gray-600">People are searching for purpose. It's time they had a place to find it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">How GIVERR Works</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    A Cycle of Giving and Gratitude
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    GIVERR flips the script. Instead of posting about yourself, you receive gratitude from others, creating a positive feedback loop of kindness.
+                </p>
+            </div>
+
+            <div class="mt-12 grid gap-10 md:grid-cols-3">
+                <div class="text-center p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white mx-auto">
+                         <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="mt-5 text-lg leading-6 font-medium text-gray-900">1. Give Back</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Perform acts of kindness in your community or network—like helping a colleague, mentoring a junior, assisting a senior, or referring someone to a job. Your positive actions kickstart the cycle.
+                    </p>
+                </div>
+
+                <div class="text-center p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-pink-500 text-white mx-auto">
+                       <i class="fa-solid fa-hands-praying"></i>
+                    </div>
+                    <h3 class="mt-5 text-lg leading-6 font-medium text-gray-900">2. Receive Gratitude</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Others share your generosity, showing appreciation. These posts earn you "Reps" for your positive impact.
+                    </p>
+                </div>
+
+                <div class="text-center p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-yellow-500 text-white mx-auto">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="mt-5 text-lg leading-6 font-medium text-gray-900">3. Acknowledge Others</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Express thanks to others for their good deeds. You'll earn "Stars" for acknowledging their contributions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                 <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Core Features</h2>
+                 <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Tools for a Kinder World</p>
+                 <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">We provide the features you need to find and spread good in the world.</p>
+            </div>
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <i class="fa-solid fa-list-alt text-3xl text-indigo-500"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Personalized Gratitude Feed</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">A curated feed tailored to your interests, highlighting relevant acts of kindness and gratitude.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                               <i class="fa-solid fa-trophy text-3xl text-pink-500"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Community Challenges</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">Time-limited challenges encouraging specific acts of kindness or volunteer work.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                               <i class="fa-solid fa-laptop-code text-3xl text-yellow-500"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Virtual Volunteering</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">Opportunities to participate in virtual volunteer activities, like online tutoring or remote crisis response.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                               <i class="fa-solid fa-user-friends text-3xl text-green-500"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Mentorship Program</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">Connect with mentors for guidance, support, and inspiration on your journey of giving.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                               <i class="fa-solid fa-gamepad text-3xl text-red-500"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Gamification Elements</h3>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500">Earn badges, level up, and climb leaderboards with your 'Reps' and 'Stars' to stay motivated and engaged.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- Value & Sustainability Section (Reworked from Monetization) -->
+    <section id="ecosystem-value" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                 <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Building Our Ecosystem</h2>
+                 <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Value & Sustainability</p>
+                 <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">Our model focuses on creating value and sustaining growth through community engagement and strategic partnerships, empowering genuine social impact.</p>
+            </div>
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+               
+                <div class="p-6 bg-gray-50 rounded-lg">
+                     <h3 class="text-lg font-medium text-gray-900">Premium Features for Organizations</h3>
+                     <p class="mt-2 text-base text-gray-500">Organizations can subscribe to unlock advanced features like custom recognition badges, enhanced analytics on campaign impact, and direct access to highly-repped volunteers.</p>
+                </div>
+               
+                <div class="p-6 bg-gray-50 rounded-lg">
+                     <h3 class="text-lg font-medium text-gray-900">Strategic Partner Integrations</h3>
+                     <p class="mt-2 text-base text-gray-500">Businesses can integrate GIVERR's gratitude system into their internal platforms for employee recognition, leveraging our 'Reps' and 'Stars' for internal engagement and social impact reporting.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-lg">
+                     <h3 class="text-lg font-medium text-gray-900">Branded Gratitude Campaigns</h3>
+                     <p class="mt-2 text-base text-gray-500">Companies can sponsor platform-wide gratitude campaigns or challenges, gaining positive brand alignment and visibility among a community dedicated to social good. This allows them to issue unique 'Stars' for specific acts.</p>
+                </div>
+               
+                <div class="p-6 bg-gray-50 rounded-lg">
+                     <h3 class="text-lg font-medium text-gray-900">Empowering Our Community</h3>
+                     <p class="mt-2 text-base text-gray-500">While our core is non-monetary, we foster strategic partnerships. For example, users with significant 'Reps' can gain access to exclusive professional development opportunities or mentorship from partner organizations.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-lg">
+                     <h3 class="text-lg font-medium text-gray-900">Exclusive Partner Perks</h3>
+                     <p class="mt-2 text-base text-gray-500">High-impact GIVERRs can redeem their accumulated 'Reps' and 'Stars' for exclusive discounts, experiences, or recognition from our network of ethical brand partners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="challenges" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                 <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Our Commitment</h2>
+                 <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">Navigating the Challenges</p>
+                 <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">We are dedicated to fostering a genuine, safe, and impactful community.</p>
+            </div>
+            <div class="mt-12 grid gap-8 md:grid-cols-2">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium text-gray-900">Authenticity & Moderation</h3>
+                    <p class="mt-2 text-base text-gray-500">We use a combination of AI and human moderation to ensure all content is genuine and positive, preventing negativity and spam.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-medium text-gray-900">Motivation & Impact</h3>
+                    <p class="mt-2 text-base text-gray-500">We balance gamification with the intrinsic motivation for doing good and are committed to measuring the real-world impact of our platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <h2 class="text-3xl font-bold gradient-text">GIVERR</h2>
+                    <p class="text-gray-400 text-base">Changing the world, one act of kindness at a time.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                     <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                             <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Solutions</h3>
+                             <ul class="mt-4 space-y-4">
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white">For Individuals</a></li>
+                                 <li><a href="#" class="text-base text-gray-400 hover:text-white">For Organizations</a></li>
+                                  <li><a href="#" class="text-base text-gray-400 hover:text-white">For Businesses</a></li>
+                             </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                             <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Company</h3>
+                             <ul class="mt-4 space-y-4">
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white">About</a></li>
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white">Blog</a></li>
+                                 <li><a href="#" class="text-base text-gray-400 hover:text-white">Careers</a></li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8">
+                <p class="text-base text-gray-400 xl:text-center">&copy; 2024 GIVERR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
