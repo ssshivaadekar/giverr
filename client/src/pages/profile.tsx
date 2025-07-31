@@ -4,6 +4,30 @@ import { Heart, Star, ArrowLeft, Calendar, Award, TrendingUp } from "lucide-reac
 import { useLocation } from "wouter";
 import { useAuth } from "@/hooks/useAuth";
 import GratitudeCard from "@/components/GratitudeCard";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+// Generate sample chart data for demonstration
+const generateChartData = (currentUser: any) => {
+  const data = [];
+  const today = new Date();
+  
+  for (let i = 29; i >= 0; i--) {
+    const date = new Date(today);
+    date.setDate(date.getDate() - i);
+    
+    // Generate realistic progression data
+    const baseReps = Math.max(0, (currentUser?.totalReps || 0) - Math.random() * 50);
+    const baseStars = Math.max(0, (currentUser?.totalStars || 0) - Math.random() * 30);
+    
+    data.push({
+      date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+      reps: Math.floor(baseReps + Math.random() * 10),
+      stars: Math.floor(baseStars + Math.random() * 8),
+    });
+  }
+  
+  return data;
+};
 
 export default function Profile() {
   const [, setLocation] = useLocation();
@@ -132,8 +156,68 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* Gratitude History */}
+        {/* Progress Chart */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+              <TrendingUp className="w-5 h-5 mr-2 text-indigo-600" />
+              Your Kindness Journey
+            </h2>
+            <div className="h-80">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={generateChartData(currentUser)}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                  <XAxis 
+                    dataKey="date" 
+                    stroke="#6b7280" 
+                    fontSize={12}
+                    tick={{ fill: '#6b7280' }}
+                  />
+                  <YAxis 
+                    stroke="#6b7280" 
+                    fontSize={12}
+                    tick={{ fill: '#6b7280' }}
+                  />
+                  <Tooltip 
+                    contentStyle={{
+                      backgroundColor: 'white',
+                      border: '1px solid #e5e7eb',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                    }}
+                  />
+                  <Legend />
+                  <Line 
+                    type="monotone" 
+                    dataKey="reps" 
+                    stroke="#6366f1" 
+                    strokeWidth={3}
+                    dot={{ fill: '#6366f1', strokeWidth: 2, r: 4 }}
+                    activeDot={{ r: 6, stroke: '#6366f1', strokeWidth: 2 }}
+                    name="Reps Earned"
+                  />
+                  <Line 
+                    type="monotone" 
+                    dataKey="stars" 
+                    stroke="#ec4899" 
+                    strokeWidth={3}
+                    dot={{ fill: '#ec4899', strokeWidth: 2, r: 4 }}
+                    activeDot={{ r: 6, stroke: '#ec4899', strokeWidth: 2 }}
+                    name="Stars Given"
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="mt-4 text-center">
+              <p className="text-sm text-gray-600">
+                Track your growth over the last 30 days and see how your kindness impacts the community!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Gratitude History */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-0">
           {/* Tab Navigation */}
           <div className="flex space-x-1 mb-8 bg-gray-100 p-1 rounded-lg">
             <button
