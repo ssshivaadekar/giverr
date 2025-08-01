@@ -1,5 +1,6 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import path from "path";
 import { storage } from "./storage";
 import { setupAuth, isAuthenticated } from "./replitAuth";
 import { 
@@ -12,6 +13,19 @@ import { z } from "zod";
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
   await setupAuth(app);
+
+  // Health check endpoint for Railway
+  app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() });
+  });
+
+  app.get('/', (req, res) => {
+    if (process.env.NODE_ENV === 'production') {
+      res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
+    } else {
+      res.send('Giverr Development Server Running');
+    }
+  });
 
   // Auth routes
   app.get('/api/auth/user', isAuthenticated, async (req: any, res) => {
