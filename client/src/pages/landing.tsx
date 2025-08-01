@@ -220,7 +220,6 @@ export default function Landing() {
               { icon: "fas fa-trophy", title: "Community Challenges", desc: "Time-limited challenges encouraging specific acts of kindness or volunteer work.", color: "text-pink-500" },
               { icon: "fas fa-laptop-code", title: "Virtual Volunteering", desc: "Opportunities to participate in virtual volunteer activities, like online tutoring or remote crisis response.", color: "text-yellow-500" },
               { icon: "fas fa-user-friends", title: "Mentorship Program", desc: "Connect with mentors for guidance, support, and inspiration on your journey of giving.", color: "text-green-500" },
-              { icon: "fas fa-gamepad", title: "Gamification Elements", desc: "Earn badges, level up, and climb leaderboards with your 'Reps' and 'Stars' to stay motivated and engaged.", color: "text-red-500" },
               { icon: "fas fa-shield-heart", title: "Trust & Safety", desc: "AI-powered authenticity checks and community moderation ensure genuine interactions.", color: "text-purple-500" }
             ].map((feature, index) => (
               <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 border border-gray-100">
