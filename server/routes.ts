@@ -10,6 +10,15 @@ import {
 } from "@shared/schema";
 import { z } from "zod";
 
+// Define request schema locally to avoid changing shared contracts for now
+const importContactsSchema = z.object({
+  contacts: z.array(z.object({
+    email: z.string().email().optional(),
+    firstName: z.string().min(1).optional(),
+    lastName: z.string().min(1).optional(),
+  })).min(1)
+});
+
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth middleware
   await setupAuth(app);
@@ -146,6 +155,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error fetching user profile:", error);
       res.status(500).json({ message: "Failed to fetch user profile" });
+    }
+  });
+
+  // Import connections (CSV or Instagram usernames)
+  app.post('/api/connections/import', isAuthenticated, async (req: any, res) => {
+    try {
+      const userId = req.user.claims.sub;
+      const { contacts } = importContactsSchema.parse(req.body);
+
+      const result = await storage.importConnections(userId, contacts);
+      res.json(result);
+    } catch (error) {
+      console.error('Error importing connections:', error);
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: 'Invalid contacts payload', errors: error.errors });
+      } else {
+        res.status(500).json({ message: 'Failed to import connections' });
+      }
+    }
+  });
+
+  // List my connections
+  app.get('/api/connections', isAuthenticated, async (req: any, res) => {
+    try {
+      const userId = req.user.claims.sub;
+      const connections = await storage.listConnections(userId);
+      res.json(connections);
+    } catch (error) {
+      console.error('Error listing connections:', error);
+      res.status(500).json({ message: 'Failed to list connections' });
     }
   });
 

@@ -20,6 +20,8 @@ export interface IStorage {
   
   // User search and connections
   searchUsers(query: string, currentUserId: string): Promise<User[]>;
+  importConnections(currentUserId: string, contacts: { email?: string; firstName?: string; lastName?: string }[]): Promise<{ connectedCount: number; skippedCount: number }>;
+  listConnections(currentUserId: string): Promise<User[]>;
   
   // Gratitude story operations
   createGratitudeStory(story: InsertGratitudeStory): Promise<GratitudeStory>;
@@ -71,6 +73,97 @@ export class DatabaseStorage implements IStorage {
         )
       )
       .limit(10);
+  }
+
+  async importConnections(currentUserId: string, contacts: { email?: string; firstName?: string; lastName?: string }[]): Promise<{ connectedCount: number; skippedCount: number }> {
+    let connectedCount = 0;
+    let skippedCount = 0;
+
+    for (const contact of contacts) {
+      // Try to find user by email first
+      let matchedUser: User | undefined = undefined;
+      if (contact.email) {
+        const [byEmail] = await db.select().from(users).where(eq(users.email, contact.email));
+        if (byEmail) matchedUser = byEmail;
+      }
+
+      // If not found by email, attempt a loose name match
+      if (!matchedUser && (contact.firstName || contact.lastName)) {
+        const first = contact.firstName ? `%${contact.firstName}%` : '%';
+        const last = contact.lastName ? `%${contact.lastName}%` : '%';
+        const results = await db
+          .select()
+          .from(users)
+          .where(
+            and(
+              ilike(users.firstName, first),
+              ilike(users.lastName, last),
+              sql`${users.id} != ${currentUserId}`
+            )
+          )
+          .limit(1);
+        matchedUser = results[0];
+      }
+
+      if (!matchedUser) {
+        skippedCount += 1;
+        continue;
+      }
+
+      // Avoid self-connection or duplicates
+      if (matchedUser.id === currentUserId) {
+        skippedCount += 1;
+        continue;
+      }
+
+      const existing = await db
+        .select()
+        .from(userConnections)
+        .where(
+          and(
+            eq(userConnections.userId, currentUserId),
+            eq(userConnections.connectedUserId, matchedUser.id)
+          )
+        );
+
+      if (existing && existing.length > 0) {
+        skippedCount += 1;
+        continue;
+      }
+
+      await db.insert(userConnections).values({
+        userId: currentUserId,
+        connectedUserId: matchedUser.id,
+        connectionType: 'friend',
+      });
+      connectedCount += 1;
+    }
+
+    return { connectedCount, skippedCount };
+  }
+
+  async listConnections(currentUserId: string): Promise<User[]> {
+    // Join userConnections to users to return connected user profiles
+    const results = await db
+      .select({
+        id: users.id,
+        email: users.email,
+        firstName: users.firstName,
+        lastName: users.lastName,
+        profileImageUrl: users.profileImageUrl,
+        bio: users.bio,
+        totalReps: users.totalReps,
+        totalStars: users.totalStars,
+        weeklyGrowth: users.weeklyGrowth,
+        kindnessLevel: users.kindnessLevel,
+        createdAt: users.createdAt,
+        updatedAt: users.updatedAt,
+      })
+      .from(userConnections)
+      .leftJoin(users, eq(userConnections.connectedUserId, users.id))
+      .where(eq(userConnections.userId, currentUserId));
+
+    return results as unknown as User[];
   }
 
   // Gratitude story operations

@@ -5,6 +5,7 @@ import { useLocation } from "wouter";
 import { useAuth } from "@/hooks/useAuth";
 import GratitudeCard from "@/components/GratitudeCard";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import ImportFriendsModal from "@/components/ImportFriendsModal";
 
 // Generate sample chart data for demonstration
 const generateChartData = (currentUser: any) => {
@@ -33,6 +34,7 @@ export default function Profile() {
   const [, setLocation] = useLocation();
   const { user: currentUser } = useAuth();
   const [activeTab, setActiveTab] = useState<'received' | 'given'>('received');
+  const [showImportModal, setShowImportModal] = useState(false);
 
   const { data: userStats, isLoading: statsLoading } = useQuery({
     queryKey: ['/api/users/stats', currentUser?.id],
@@ -75,6 +77,9 @@ export default function Profile() {
               />
             </div>
             <div className="flex items-center space-x-4">
+              <button onClick={() => setShowImportModal(true)} className="px-3 py-2 text-sm font-medium rounded-md border border-indigo-200 text-indigo-700 hover:bg-indigo-50">
+                Import friends
+              </button>
               <a href="/api/logout" className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium">
                 Logout
               </a>
@@ -276,6 +281,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
+      <ImportFriendsModal isOpen={showImportModal} onClose={() => setShowImportModal(false)} />
     </div>
   );
 }
